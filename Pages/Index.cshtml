@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "WebAppBlob";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <div class="col-12">
+        <div class="container">
+            <div class="row mt-4 justify-content-center">
+                @if (Model.ErrorMessage != null)
+                {
+                    <p class="text-danger">@Model.ErrorMessage</p>
+                }
+                else
+                {
+                    foreach (var uri in Model.Uris)
+                    {
+                        <div class="col-md-3 col-sm-12 col-12">
+                            <div class="card card-pricing card-plain">
+                                <div class="card-body">
+                                    <img src="@uri" alt="Image" title="Image" class="card-img-top">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
