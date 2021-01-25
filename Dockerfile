@@ -4,7 +4,7 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet publish MyApp.csproj -c Release -o publish
+RUN dotnet publish WebAppBlob.csproj -c Release -o publish
 
 FROM base AS final
 WORKDIR /app
